@@ -4,7 +4,7 @@ const lighthousePersist = require('@foo-software/lighthouse-persist').default;
 
 // DOMAIN AUDIT | GET: /api/v1/report?domain= | public
 router.get('/report', async (req, res) => {
-    const {domain} = req.query
+    const {domain} = req.body
     try {
         const {localReport,result} = await lighthousePersist({url: domain,})
         report = {
