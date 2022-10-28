@@ -3,7 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt  = require('jsonwebtoken')
 const User = require('../../models/User')
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = "cjXttjuQcYc99sMJQ7gxIia"
 const auth = require('../../middleware/auth')
 // POST api/v1/sign-in | public | login user
 router.post('/sign-in', async (req, res) => {

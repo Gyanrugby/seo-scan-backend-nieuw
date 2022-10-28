@@ -18,6 +18,7 @@
   "dependencies": {
     "@foo-software/lighthouse-persist": "1.0.5",
     "bcryptjs": "2.4.3",
+    "body-parser": "^1.20.1",
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
@@ -25,12 +26,13 @@
     "jsonwebtoken": "8.5.1",
     "mongoose": "5.10.9",
     "morgan": "1.10.0",
+    "nodemon": "^2.0.20",
     "request": "2.88.2",
     "request-promise": "4.2.6"
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
-  } ,
+  },
   "engines": {
     "node": "16.x"
   }

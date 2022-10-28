@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = process.env.MONGO_URI
+const URI = "mongodb+srv://gyan:lol12345@cluster0.jtsnerp.mongodb.net/test"
 mongoose.connect(URI, {
         useNewUrlParser: true,
         useCreateIndex: true,

@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const request = require("request")
 const cheerio = require("cheerio")
-const pageusedURL = process.env.PAGESUSED
+const pageusedURL = "https://www.google.com/search?hl=en&q="
 
 // pagesused KWYWORD | GET: /api/v1/pagesused?keyword= | public
 router.get('/pagesused', (req, res) => {

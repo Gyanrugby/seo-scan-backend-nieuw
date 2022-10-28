@@ -4,23 +4,16 @@ const morgan = require('morgan')
 const dotenv = require('dotenv')
 const cors = require('cors')
 const path = require('path')
-
-
+const bd = require("body-parser")
+app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
 dotenv.config({ path: './config/config.env' })
 require('./config/db')
-app.use(cors())
-
-
-// if(process.env.NODE_ENV === 'production') {
-//     // SET STATIC FOLDER
-//     app.use(express.static('test_static/'))
-
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'test_static', 'index.html'))
-//     })
-// }
+app.use(bd.urlencoded({
+    extended:false
+}))
+app.use(bd.json())
 
 // ROUTES
 app.use('/api/v1/', require('./routes/keyword/suggest')) //suggestions

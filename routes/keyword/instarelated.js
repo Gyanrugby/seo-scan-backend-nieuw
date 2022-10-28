@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const rp = require('request-promise')
-const instaurl = process.env.INSTAURL
+const instaurl = "https://www.instagram.com/explore/tags/"
 
 // SUGGESTIONS KWYWORD | GET: /api/v1/instagram?keyword= | public
 router.get('/instagram', (req, res) => {

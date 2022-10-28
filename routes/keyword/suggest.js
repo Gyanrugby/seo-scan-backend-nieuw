@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const request = require("request")
 const cheerio = require("cheerio")
-const suggestURL = process.env.SUGGESTURL
+const suggestURL = "http://google.com/complete/search?output=toolbar&hl=en&q="
 
 // SUGGESTIONS KWYWORD | GET: /api/v1/keywords?keyword= | public
 router.get('/keywords', (req, res) => {
