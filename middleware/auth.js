@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = "cjXttjuQcYc99sMJQ7gxIia"
 module.exports = function(req, res, next)  {
     // GET thE TOKEN FROM HESADER
     const token = req.header('x-auth-token')

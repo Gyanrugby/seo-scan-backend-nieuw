@@ -39,6 +39,9 @@ router.post('/sign-in', async (req, res) => {
         })
     } catch (err) {
         console.log(err)
+        res.json({
+            err:err
+        })
     }
 })
 
@@ -71,6 +74,9 @@ router.get('/history',auth, async (req, res, next) => {
         
     } catch (err) {
         console.log(err)
+        res.json({
+            err:err
+        })
     }
 });
 

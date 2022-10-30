@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt  = require('jsonwebtoken')
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = "cjXttjuQcYc99sMJQ7gxIia"
 
 
 const User = require('../../models/User')
@@ -44,6 +44,7 @@ router.post('/sign-up', async (req, res) => {
                 id: user._id
             }
         }
+        console.log(payload,JWT_SECRET)
         jwt.sign(payload, JWT_SECRET, {
             expiresIn: 36000 
         }, (err, token) => {
@@ -54,6 +55,9 @@ router.post('/sign-up', async (req, res) => {
         })
     } catch (err) {
         console.log(err)
+        res.json({
+            err:err
+        })
     }
 })
 
