@@ -7,20 +7,20 @@ const JWT_SECRET = "cjXttjuQcYc99sMJQ7gxIia"
 
 const User = require('../../models/User')
 
-// POST api/v1/sign-up | public | register a new userand keep logged in
+// POST api/v1/sign-up | public | registereren ingelogt blijven
 router.post('/sign-up', async (req, res) => {
     try {
         // extracting fields from req.body
         const {name, email, password} = req.body
-        // checking if all the fields are filled
+        // Controleer of alle velden zijn ingevuld
         if(!name || !email || !password){
-            return res.status(400).json({ msg: 'please enter all feilds' })
+            return res.status(400).json({ msg: 'Vul alle velden in' })
         }
 
-        // checking if user exists and if return an error 
+        // Bekijk of de user bestaat of niet
         let user = await User.findOne({email})
         if(user){
-            return res.status(400).json({ msg: 'user alrady exists' })
+            return res.status(400).json({ msg: 'User bestaat al' })
         }
 
         let date_info = new Date;
@@ -34,7 +34,7 @@ router.post('/sign-up', async (req, res) => {
             cleatedAt: date_into
         })
 
-        // GANARATEING SALT AND HASHING THE PASSOWRD
+        // Generate de salt en controleer het wachtwoord met de hash
         const slat =await bcrypt.genSalt(10)
         user.password = await bcrypt.hash(password, slat)
         await user.save()

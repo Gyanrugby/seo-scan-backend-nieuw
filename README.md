@@ -1,5 +1,5 @@
-**SCAN** is a simple seo web application that scan for keywords from google, instergram and other sites by scarpping them.
+**SCAN** is een seo webapplicatie die scant op keywords van google, instagram en andere sites door ze te scrapen.
 
-If a keyword is given **SCAN** will look for other related keywords if a url is given **SCAN** will scrap the given site for seo keywords and also measure the performance, accessibility of the given wwebsite.
+Als een keyword wordt gegeven **SCAN** zal zoeken naar andere gerelateerde trefwoorden als een url wordt gegeven **SCAN** zal de gegeven site scrapen voor seo keywords en ook de prestaties, toegankelijkheid van de gegeven website meten.
 
-#### **scraping others sites without permission is illegal** ☺️ ☺️
+#### **scraping zonder toestemming is illegaal** ☺️ ☺️

@@ -1,3 +1,4 @@
+// Connectie met MONGO DB
 const mongoose = require('mongoose');
 
 const URI = "mongodb+srv://gyan:lol12345@cluster0.jtsnerp.mongodb.net/test"

@@ -13,8 +13,8 @@ router.get('/domainkeyword',  (req, res) => {
 
             const disc = $('meta[name="description"]').attr('content')
             const title = $('meta[property="og:title"]').attr('content')
-            if(title !== undefined) results.push(title) //title
-            if(disc !== undefined) results.push(disc) //description
+            if(title !== undefined) results.push(title) //titel
+            if(disc !== undefined) results.push(disc) //Beschrijving
             
             $("h1, h2, h3, h4, h5, h6").map((_,element) => {
                 const heading = $(element).text()

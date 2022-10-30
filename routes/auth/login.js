@@ -11,18 +11,18 @@ router.post('/sign-in', async (req, res) => {
         // extracting fields from req.body
         const { email, password} = req.body
 
-        // checking if all the fields are filled
+        // Controleer of alle velden zijn ingevuld
         if(!email || !password){
-            return res.status(400).json({ msg: 'please enter all feilds' })
+            return res.status(400).json({ msg: 'Alle velden invullen alstublieft' })
         }
 
         // checking if user exists and if not return an error 
         let user = await User.findOne({email})
-        if(!user) return res.status(400).json({ msg: 'user doesnt exixts' })
+        if(!user) return res.status(400).json({ msg: 'Gebruiker bestaat niet' })
 
         // validating password using bcrypt  
         const isMatch = await bcrypt.compare(password, user.password)
-        if(!isMatch ) return res.status(400).json({ msg: 'invlid credentials' })
+        if(!isMatch ) return res.status(400).json({ msg: 'Onjuiste gegevens' })
         
         const payload = {
             user: {
@@ -45,7 +45,7 @@ router.post('/sign-in', async (req, res) => {
     }
 })
 
-// USER AUTH
+// User authenticatie
 router.get('/user', auth,  async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password')
@@ -58,7 +58,7 @@ router.get('/user', auth,  async (req, res) => {
     }
 })
 
-// history
+// historie
 router.get('/history',auth, async (req, res, next) => {
     const {word} = req.query
     try {

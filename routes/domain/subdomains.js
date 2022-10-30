@@ -16,10 +16,7 @@ router.get('/subdomains',  (req, res) => {
             $(links).each((i, link) => {
                 let link_url = $(link).attr('href')
                 
-                // WITH HTTPS:// or HTTP://
-                // isSubdomain(link_url) ?  (
-                //     results.push(link_url)
-                // ) : null
+               
 
                 isSubdomain(link_url) ?  (
                     results.push(link_url.replace(/(https?:\/\/)?(www.)?/i, ''))
@@ -28,7 +25,7 @@ router.get('/subdomains',  (req, res) => {
             });
 
             
-            // RETURN OR DO SOMETHING
+            // Return of doorgaan
             return res.json({
                 success: true,
                 results

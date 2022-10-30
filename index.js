@@ -15,17 +15,17 @@ app.use(bd.urlencoded({
 }))
 app.use(bd.json())
 
-// ROUTES
-app.use('/api/v1/', require('./routes/keyword/suggest')) //suggestions
-app.use('/api/v1/', require('./routes/keyword/pagesused')) //pageused
-app.use('/api/v1/', require('./routes/keyword/instarelated')) //instarelated
-app.use('/api/v1/', require('./routes/domain/report')) //audit
-app.use('/api/v1/', require('./routes/domain/domainkeyword')) // domainkeyword
-app.use('/api/v1/', require('./routes/domain/subdomains')) // subdomains
-app.use('/api/v1/', require('./routes/auth/register')) // registor
-app.use('/api/v1/', require('./routes/auth/login')) // login | user auth | history
+// Route
+app.use('/api/v1/', require('./routes/keyword/suggest')) //suggesties
+app.use('/api/v1/', require('./routes/keyword/pagesused')) //pagina's used
+app.use('/api/v1/', require('./routes/keyword/instarelated')) //instarelated (werkt momentele niet)
+app.use('/api/v1/', require('./routes/domain/report')) // audit
+app.use('/api/v1/', require('./routes/domain/domainkeyword')) // domein keyword
+app.use('/api/v1/', require('./routes/domain/subdomains')) // subdomeinen
+app.use('/api/v1/', require('./routes/auth/register')) // registreren
+app.use('/api/v1/', require('./routes/auth/login')) // login | user auth | historie
 
-
+// De port van het proces
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`SERVER RUNNING AT PORT ${PORT}`))
 

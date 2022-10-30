@@ -1,4 +1,4 @@
-// gooogle suggest kwyword | v2
+// google suggest keyword | v2
 const express = require('express')
 const router = express.Router()
 const request = require("request")
