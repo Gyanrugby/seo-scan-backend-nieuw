@@ -14,21 +14,7 @@ router.get('/keywords', (req, res) => {
         if(!error && response.statusCode == 200) {
             const $ = cheerio.load(html)
             
-            /*
-            const sendrequest = async (result) => {
-                try {
-                    console.log(result.length)
-                    // return res.json({success: true, result})
-
-                    setTimeout(() => { 
-                        return res.json({success: true, result})
-                    }, 1500);
-
-                } catch (err) {
-                    console.log(err)
-                }
-            }
-            */
+        
            
             let executed = false
             const sendrequest =  (result) => {

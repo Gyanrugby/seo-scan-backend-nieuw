@@ -8,7 +8,7 @@ const auth = require('../../middleware/auth')
 // POST api/v1/sign-in | public | login user
 router.post('/sign-in', async (req, res) => {
     try {
-        // extracting fields from req.body
+        // exporteren velden van req.body
         const { email, password} = req.body
 
         // Controleer of alle velden zijn ingevuld
@@ -16,11 +16,11 @@ router.post('/sign-in', async (req, res) => {
             return res.status(400).json({ msg: 'Alle velden invullen alstublieft' })
         }
 
-        // checking if user exists and if not return an error 
+        // controleren of de gebruiker al bestaat
         let user = await User.findOne({email})
         if(!user) return res.status(400).json({ msg: 'Gebruiker bestaat niet' })
 
-        // validating password using bcrypt  
+        // valideren van wachtwoord met gebruik van bcrypt  
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch ) return res.status(400).json({ msg: 'Onjuiste gegevens' })
         
